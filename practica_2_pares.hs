@@ -13,7 +13,7 @@ sumaLista (x:xs) = x + sumaLista xs
 
 maximoLista :: (Num a, Ord a) => [a] -> a
 maximoLista [x] = x
-maximoLista (x:xs) = max (maximoLista xs) x
+maximoLista (x:y:xs) = maximoLista (if x >= y then x : xs else y : xs)
 
 
 --4.1. Divisores de un numero entero.:
