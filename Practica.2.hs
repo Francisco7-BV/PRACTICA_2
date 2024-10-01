@@ -21,10 +21,9 @@ sumaLista (x:xs) = x + sumaLista xs
 --o al final.
 
 agregaElemento :: [a] -> a -> Bool -> [a]
-agregaElemento [] a False = [a]
-agregaElemento [] a True = [a]
-agregaElemento (x:xs) a True = a : (x:xs) 
-agregaElemento (x:xs) a False = [x] ++ agregaElemento xs a False
+agregaElemento (x:xs) a True = if True == True
+                            then a:(x:xs) 
+                            else (x:xs) ++ [a]
 
 
 --3.4. Maximo de una lista:
@@ -42,9 +41,10 @@ maximoLista (x:xs) = if x > maximoLista xs
 --dentro de la lista. La funcion devuelve el elemento del indice especificado en la lista.
 
 indice :: [a] -> Int -> a
+indice [] n = error "no hay nada en la lista"
 indice (x:xs) 0 = x
 indice (x:xs) n = if n >= longitud (x:xs) || n<0
-                    then error "indice fuera del rango"
+                    then error "índice fuera del rango"
                     else indice (xs) (n-1)
 
 --Ademas tendran que verificar que el entero que representa el indice, este dentro del rango siguiente:
