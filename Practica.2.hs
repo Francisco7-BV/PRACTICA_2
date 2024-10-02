@@ -21,9 +21,9 @@ sumaLista (x:xs) = x + sumaLista xs
 --o al final.
 
 agregaElemento :: [a] -> a -> Bool -> [a]
-agregaElemento (x:xs) a True = if True == True
-                            then a:(x:xs) 
-                            else (x:xs) ++ [a]
+agregaElemento xs a agregar =  if agregar 
+                            then a:xs        
+                            else xs ++ [a]
 
 
 --3.4. Maximo de una lista:
